@@ -6,11 +6,41 @@ datasource db {
     provider = "postgresql"
 }
 
-model Exemplo {
+model Usuario {
     id        Int      @id @default(autoincrement())
     nome      String
-    estado    Boolean  @default(true)
-    preco     Decimal? @db.Decimal(10, 2)
-
-    @@map("exemplo")
+    ativo    Boolean  @default(true)
+    data       DateTime @db.Date
+    @@map("usuario")
 }
+
+model Livro {
+    id Int @id @default(autoincrement())
+    titulo String
+    capa String
+    autor String
+    anoPublicacao Int
+    genero_pt String
+    genero_en  String
+    resumo_en String @db.Text
+    resumo_pt String @db.Text
+    personagens String[]
+    contextoHistorico_pt String
+    contextoHistorico_en String
+    analise_pt String
+    analise_en String
+}
+model Dica {
+    id Int @id @default(autoincrement())
+    conteudo String @db.Text
+    interpretacao String
+    temasVestibular String
+}
+
+model TemasRedacao{
+    id Int @id @default(autoincrement())
+    assunto String
+    dificuldade Int
+}
+
+
