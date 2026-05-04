@@ -1,15 +1,22 @@
 {
-  "name": "Projeto_integrador_Backend",
+  "name": "Atividade_portugues_Backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "atividade integradora sesi e senai",
   "main": "server.js",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "cls && nodemon src/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "SENAI",
+    "NodeJS",
+    "Express",
+    "API",
+    "Prisma",
+    "PostgreSQL"
+  ],
+  "author": "grupo 1",
   "license": "MIT",
   "dependencies": {
     "@prisma/adapter-pg": "^7.3.0",
