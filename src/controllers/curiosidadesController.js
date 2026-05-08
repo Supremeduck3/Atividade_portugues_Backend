@@ -35,7 +35,7 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'O campo "contexto_en" é obrigatório!' });
         }
 
-        const Curiosidades = new ExemploModel({ fatosLivro, fatosLivro_en, autor, autor_en, contexto, contexto_en});
+        const Curiosidades = new CuriosidadesModel({ fatosLivro, fatosLivro_en, autor, autor_en, contexto, contexto_en});
         const data = await Curiosidades.criar();
 
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });
