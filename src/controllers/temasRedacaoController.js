@@ -1,4 +1,4 @@
-import TemasRedacaoModel from '../models/DicaModel.js';
+import TemasRedacaoModel from '../models/TemasRedacaoModel.js';
 
 export const criar = async (req, res) => {
     try {
@@ -18,12 +18,12 @@ export const criar = async (req, res) => {
         if (!assunto_en){
             return res.status(400).json({ error: 'O campo "assunto_en" é obrigatório!' });
         }
-        if (interpretacao === undefined || interpretacao === null) {
-            return res.status(400).json({ error: 'O campo "interpretacao" é obrigatório!' });
+        if (dificuldade === undefined || dificuldade === null) {
+            return res.status(400).json({ error: 'O campo "dificuldade" é obrigatório!' });
         }
 
-        const Dica = new ExemploModel({ conteudo, conteudo_en, interpretacao, interpretacao_en, temasVestibular, temasVestibular_en});
-        const data = await Dica.criar();
+        const TemasRedacao = new TemasRedacaoModel({ assunto, assunto_en, dificuldade });
+        const data = await TemasRedacao.criar();
 
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });
     } catch (error) {
@@ -34,7 +34,7 @@ export const criar = async (req, res) => {
 
 export const buscarTodos = async (req, res) => {
     try {
-        const registros = await DicaModel.buscarTodos(req.query);
+        const registros = await TemasRedacaoModel.buscarTodos(req.query);
 
         if (!registros || registros.length === 0) {
             return res.status(400).json({ message: 'Nenhum registro encontrado.' });
@@ -55,13 +55,13 @@ export const buscarPorId = async (req, res) => {
             return res.status(400).json({ error: 'O ID enviado não é um número válido.' });
         }
 
-        const Dica = await DicaModel.buscarPorId(parseInt(id));
+        const TemasRedacao = await TemasRedacaoModel.buscarPorId(parseInt(id));
 
-        if (!Dica) {
+        if (!TemasRedacao) {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
-        return res.status(200).json({ data: Dica });
+        return res.status(200).json({ data: TemasRedacao });
     } catch (error) {
         console.error('Erro ao buscar:', error);
         return res.status(500).json({ error: 'Erro ao buscar registro.' });
@@ -80,34 +80,25 @@ export const atualizar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const Dica = await DicaModel.buscarPorId(parseInt(id));
+        const TemasRedacao = await TemasRedacaoModel.buscarPorId(parseInt(id));
 
-        if (!Dica) {
+        if (!TemasRedacao) {
             return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
         }
 
-        if (req.body.conteudo !== undefined) {
-            Dica.conteudo = req.body.conteudo;
+        if (req.body.assunto !== undefined) {
+            TemasRedacao.assunto = req.body.assunto;
         }
-        if (req.body.conteudo_en !== undefined) {
-            Dica.conteudo_en = req.body.conteudo_en;
+        if (req.body.assunto_en !== undefined) {
+            TemasRedacao.assunto_en = req.body.assunto_en;
         }
-        if (req.body.interpretacao !== undefined) {
-            Dica.interpretacao = req.body.interpretacao;
-        }
-        if (req.body.interpretacao_en !== undefined) {
-            Dica.interpretacao_en = req.body.interpretacao_en;
-        }
-        if (req.body.temasVestibular !== undefined) {
-            Dica.temasVestibular = parseFloat(req.body.temasVestibular);
-        }
-        if (req.body.temasVestibular_en !== undefined) {
-            Dica.temasVestibular_en = parseFloat(req.body.temasVestibular_en);
+        if (req.body.dificuldade !== undefined) {
+            TemasRedacao.dificuldade = req.body.dificuldade;
         }
 
-        const data = await Dica.atualizar();
+        const data = await TemasRedacao.atualizar();
 
-        return res.status(200).json({ message: `O registro "${data.conteudo || conteudo_en}" foi atualizado com sucesso!, data `});
+        return res.status(200).json({ message: `O registro "${data.assunto || assunto_en}" foi atualizado com sucesso!, data `});
     } catch (error) {
         console.error('Erro ao atualizar:', error);
         return res.status(500).json({ error: 'Erro ao atualizar registro.' });
@@ -122,15 +113,15 @@ export const deletar = async (req, res) => {
             return res.status(400).json({ error: 'ID inválido.' });
         }
 
-        const Dica = await DicaModel.buscarPorId(parseInt(id));
+        const TemasRedacao = await TemasRedacaoModel.buscarPorId(parseInt(id));
 
-        if (!Dica) {
+        if (!TemasRedacao) {
             return res.status(404).json({ error: 'Registro não encontrado para deletar.' });
         }
 
-        await Dica.deletar();
+        await TemasRedacao.deletar();
 
-        return res.status(200).json({ message: `O registro ${Dica.conteudo || conteudo_en}" foi deletado com sucesso!, deletado: Dica `});
+        return res.status(200).json({ message: `O registro ${TemasRedacao.assunto || assunto_en}" foi deletado com sucesso!, deletado: Dica `});
     } catch (error) {
         console.error('Erro ao deletar:', error);
         return res.status(500).json({ error: 'Erro ao deletar registro.' });

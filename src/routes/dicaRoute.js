@@ -1,12 +1,12 @@
 import express from 'express';
-import * as controller from '../controllers/dicaController.js';
+import * as dica from '../controllers/dicaController.js';
 
 const router = express.Router();
 
-router.post('/', controller.criar);
-router.get('/', controller.buscarTodos);
-router.get('/:id', controller.buscarPorId);
-router.put('/:id', controller.atualizar);
-router.delete('/:id', controller.deletar);
+router.post('/', dica.criar);
+router.get('/', dica.buscarTodos);
+router.get('/:id', dica.buscarPorId);
+router.put('/:id', dica.atualizar);
+router.delete('/:id', dica.deletar);
 
 export default router;
