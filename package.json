@@ -1,7 +1,7 @@
 {
   "name": "Atividade_portugues_Backend",
   "version": "1.0.0",
-  "description": "atividade integradora sesi e senai",
+  "description": "atividade integradora ds portugues",
   "main": "server.js",
   "type": "module",
   "private": true,
@@ -16,7 +16,7 @@
     "Prisma",
     "PostgreSQL"
   ],
-  "author": "grupo 1",
+  "author": "grupo1",
   "license": "MIT",
   "dependencies": {
     "@prisma/adapter-pg": "^7.3.0",
