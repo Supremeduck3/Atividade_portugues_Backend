@@ -36,7 +36,7 @@ async function main() {
         data: {
             titulo: 'Dom Casmurro',
             titulo_en: 'Dom Casmurro',
-            capa: 'https://exemplo.com/capas/dom-casmurro.jpg',
+            capa: 'https://www.pqn.com.br/portal/wp-content/uploads/2021/02/livro-dom-casmurro-de-machado-de-assis-og-300x158.jpg',
             autor: 'Machado de Assis',
             anoPublicacao: 1899,
             genero: 'Romance Realista',
@@ -99,8 +99,7 @@ async function main() {
             assunto: 'Os impactos do ciúme e da posse nas relações amorosas contemporâneas',
             assunto_en:
                 'The impacts of jealousy and possession in contemporary romantic relationships',
-            dificuldade: 4,
-            dificuldade_en: 4, // Como no seu schema está 'Int', mantemos como número
+            dificuldade: 4, // Como no seu schema está 'Int', mantemos como número
         },
     });
     console.log('✅ Tema de Redação inserido.');

@@ -1,11 +1,11 @@
 import prisma from '../lib/services/prismaClient.js';
 
 export default class ExemploModel {
-    constructor({ id = null, nome, estado = true, preco = null } = {}) {
+    constructor({ id = null, resumo, capa} = {}) {
         this.id = id;
-        this.nome = nome;
-        this.estado = estado;
-        this.preco = preco;
+        this.resumo = resumo;
+        this.capa = capa
+
     }
 
     async criar() {
@@ -42,11 +42,11 @@ export default class ExemploModel {
             where.preco = parseFloat(filtros.preco);
         }
 
-        return prisma.exemplo.findMany({ where });
+        return prisma.livro.findMany({ where });
     }
 
     static async buscarPorId(id) {
-        const data = await prisma.exemplo.findUnique({ where: { id } });
+        const data = await prisma.livro.findUnique({ where: { id } });
         if (!data) {
             return null;
         }
