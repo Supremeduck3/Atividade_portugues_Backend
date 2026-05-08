@@ -22,7 +22,7 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'O campo "RespostaoQuestao_en" é obrigatório!' });
         }
 
-        const Quiz = new ExemploModel({
+        const Quiz = new QuizModel({
             conteudoQuestao,
             conteudoQuestao_en,
             RespostaQuestao,

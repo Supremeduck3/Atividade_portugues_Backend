@@ -15,7 +15,7 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'O campo "ativo" é obrigatório!' });
         }
 
-        const usuario = new ExemploModel({ nome, ativo });
+        const usuario = new UsuarioModel({ nome, ativo });
         const data = await usuario.criar();
 
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });
