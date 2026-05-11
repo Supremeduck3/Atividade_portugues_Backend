@@ -1,11 +1,12 @@
 import express from 'express';
 import 'dotenv/config';
-import curiosidadesRoutes from './routes/curiosidadesRoute.js';
+
+import quizRoutes from './routes/quizRoute.js';
 import dicaRoutes from './routes/dicaRoute.js';
-import livroRoutes from './routes/livroRoute.js';
-import quizsRoutes from './routes/quizRoute.js';
 import temasRedacaoRoutes from './routes/temasRedacaoRoute.js';
+import curiosidadesRoute from './routes/curiosidadesRoute.js'
 import usuarioRoutes from './routes/usuarioRoute.js';
+import livroRoutes from './routes/livroRoute.js'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,10 +18,11 @@ app.get('/', (req, res) => {
 });
 
 // Rotas
-app.use('/api/exemplos', curiosidadesRoutes);
-app.use('/api/exemplos', dicaRoutes);
-app.use('/api/exemplos', livroRoutes);
-app.use('/api/exemplos', quizsRoutes);
+
+app.use('/api/curiosidades', curiosidadesRoute);
+app.use('/api/dica', dicaRoutes);
+app.use('/api/livro', livroRoutes);
+app.use('/api/quiz', quizRoutes);
 app.use('/api/temasRedacao', temasRedacaoRoutes);
 app.use('/api/usuario', usuarioRoutes);
 
