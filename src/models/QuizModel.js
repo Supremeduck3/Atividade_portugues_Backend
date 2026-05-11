@@ -10,10 +10,10 @@ export default class QuizModel {
 
     } = {}) {
         this.id = id;
-        this.conteudoQuestao = this.conteudoQuestao;
-        this.conteudoQuestao_en = this.conteudoQuestao_en;
-        this.respostaQuestao = this.respostaQuestao;
-        this.respostaQuestao_en = this.respostaQuestao_en;
+        this.conteudoQuestao = conteudoQuestao;
+        this.conteudoQuestao_en = conteudoQuestao_en;
+        this.respostaQuestao = respostaQuestao;
+        this.respostaQuestao_en = respostaQuestao_en;
     }
 
     async criar() {

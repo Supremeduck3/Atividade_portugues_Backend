@@ -12,7 +12,7 @@ export default class TemasRedacaoModel {
         this.assunto = this.assunto;
         this.assunto_en = this.assunto_en;
         this.dificuldade = this.dificuldade;
-
+        
     }
 
     async criar() {
