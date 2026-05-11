@@ -154,9 +154,9 @@ export const buscarPorId = async (req, res) => {
             return res.status(400).json({ error: 'O ID enviado não é um número válido.' });
         }
 
-        const Livor = await LivroModel.buscarPorId(parseInt(id));
+        const Livro = await LivroModel.buscarPorId(parseInt(id));
 
-        if (!Dica) {
+        if (!Livro) {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
@@ -256,11 +256,8 @@ export const atualizar = async (req, res) => {
 
         return res
             .status(200)
-            .json({
-                message: `O registro "${
-                    data.titulo || titulo_en || capa || autor || anoPublicacao || genero || genero_en || resumo || resumo_en || estiloEscrita || estiloEscrita_en || enredo || enredo_en || verossimilhanca_en || verossimilhanca || personagens || caracteristicasLiterarias || caracteristicasLiterarias_en || conclusao || conclusao_en
-                }" foi atualizado com sucesso!, data `,
-            });
+            .json({ message: `O registro "${data.titulo}" foi atualizado com sucesso!`, data });
+
     } catch (error) {
         console.error('Erro ao atualizar:', error);
         return res.status(500).json({ error: 'Erro ao atualizar registro.' });
