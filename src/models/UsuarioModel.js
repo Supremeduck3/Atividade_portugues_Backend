@@ -12,6 +12,7 @@ export default class UsuarioModel {
             data: {
                 nome: this.nome,
                 ativo: this.ativo,
+                data: new Date(),
             },
         });
     }
@@ -24,7 +25,11 @@ export default class UsuarioModel {
     }
 
     async deletar() {
-        return prisma.usuario.delete({ where: { id: this.id } });
+        return prisma.usuario.delete({
+            where: {
+                id: Number(this.id), // Força a conversão para número aqui também
+            },
+        });
     }
 
     static async buscarTodos(filtros = {}) {
