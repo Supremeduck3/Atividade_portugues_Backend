@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
     res.send('🚀 API funcionando');
 });
 
+
 // Rotas
 
 app.use('/api/curiosidades', curiosidadesRoute);

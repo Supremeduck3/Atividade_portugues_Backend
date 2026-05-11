@@ -11,12 +11,12 @@ export default class DicaModel {
         temasVestibular_en = null,
     } = {}) {
         this.id = id;
-        this.conteudo = this.conteudo;
-        this.conteudo_en = this.conteudo_en;
-        this.interpretacao = this.interpretacao;
-        this.interpretacao_en = this.interpretacao_en;
-        this.temasVestibular = this.temasVestibular;
-        this.temasVestibular_en = this.temasVestibular_en;
+        this.conteudo = conteudo;
+        this.conteudo_en = conteudo_en;
+        this.interpretacao = interpretacao;
+        this.interpretacao_en = interpretacao_en;
+        this.temasVestibular = temasVestibular;
+        this.temasVestibular_en = temasVestibular_en;
     }
 
     async criar() {
@@ -34,16 +34,25 @@ export default class DicaModel {
 
     async atualizar() {
         return prisma.dica.update({
-            where: { id: this.id },
+            where: { id: parseInt(this.id) },
             data: {
-                conteudo: this.conteudo,
-                conteudo_en: this.conteudo_en,
-                interpretacao: this.interpretacao,
-                interpretacao_en: this.interpretacao_en,
-                temasVestibular: this.temasVestibular,
-                temasVestibular_en: this.temasVestibular_en,
+                conteudo: String(this.conteudo),
+                conteudo_en: String(this.conteudo_en),
+                interpretacao: this.interpretacao, 
+                interpretacao_en: String(this.interpretacao_en),
+                temasVestibular: String(this.temasVestibular),
+                temasVestibular_en: String(this.temasVestibular_en),
             },
         });
+    }
+
+    static async buscarPorId(id) {
+        if (!id) return null;
+        const data = await prisma.dica.findUnique({
+            where: { id: parseInt(id) },
+        });
+        if (!data) return null;
+        return new DicaModel(data);
     }
 
     async deletar() {

@@ -3,9 +3,10 @@ import prisma from '../lib/services/prismaClient.js';
 export default class TemasRedacaoModel {
     constructor({ id = null, assunto, assunto_en, dificuldade = true } = {}) {
         this.id = id;
-        this.assunto = assunto;
-        this.assunto_en = assunto_en;
-        this.dificuldade = dificuldade;
+        this.assunto = this.assunto;
+        this.assunto_en = this.assunto_en;
+        this.dificuldade = this.dificuldade;
+        
     }
 
     async criar() {
