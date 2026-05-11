@@ -110,10 +110,11 @@ export const deletar = async (req, res) => {
         }
 
         await usuario.deletar();
-
-        return res.status(200).json({ message: "O registro ${usuario.nome} foi deletado com sucesso!, deletado: usuario" });
     } catch (error) {
-        console.error('Erro ao deletar:', error);
-        return res.status(500).json({ error: 'Erro ao deletar registro.' });
+        console.error('Erro detalhado:', error); // Olhe o terminal do VS Code!
+        return res.status(500).json({
+            error: 'Erro ao deletar registro.',
+            causa: error.message, // Isso vai te dizer se é erro de banco, conexão ou lógica
+        });
     }
 };
