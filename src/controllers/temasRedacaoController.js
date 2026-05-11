@@ -1,4 +1,4 @@
-import TemasRedacaoModel from '../models/TemasRedacaoModel.js';
+import TemasRedacaoModel from '../models/temasRedacaoModel.js'
 
 export const criar = async (req, res) => {
     try {
