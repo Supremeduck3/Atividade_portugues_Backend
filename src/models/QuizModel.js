@@ -3,17 +3,17 @@ import prisma from '../lib/services/prismaClient.js';
 export default class QuizModel {
     constructor({
         id = null,
-        conteudoQuestao,
-        conteudoQuestao_en,
-        respostaQuestao,
-        respostaQuestao_en,
+        conteudoQuestao = null,
+        conteudoQuestao_en = null,
+        respostaQuestao = null,
+        respostaQuestao_en = null,
 
     } = {}) {
         this.id = id;
-        this.conteudoQuestao = this.conteudoQuestao;
-        this.conteudoQuestao_en = this.conteudoQuestao_en;
-        this.respostaQuestao = this.respostaQuestao;
-        this.respostaQuestao_en = this.respostaQuestao_en;
+        this.conteudoQuestao = conteudoQuestao;
+        this.conteudoQuestao_en = conteudoQuestao_en;
+        this.respostaQuestao = respostaQuestao;
+        this.respostaQuestao_en = respostaQuestao_en;
     }
 
     async criar() {

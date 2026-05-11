@@ -1,6 +1,6 @@
 import prisma from '../lib/services/prismaClient.js';
 
-export default class DicaModel {
+export default class LivroModel {
     constructor({
         id = null,
         titulo,
@@ -27,28 +27,28 @@ export default class DicaModel {
         conclusao_en,
     } = {}) {
         this.id = id;
-        this.titulo = this.titulo;
-        this.titulo_en = this.titulo_en;
-        this.capa = this.capa;
-        this.autor = this.autor;
-        this.anoPublicacao = this.anoPublicacao;
-        this.genero = this.genero;
-        this.genero_en = this.genero_en;
-        this.resumo = this.resumo;
-        this.resumo_en = this.resumo_en;
-        this.contexto = this.contexto;
-        this.contexto_en = this.contexto_en;
-        this.estiloEscrita = this.estiloEscrita;
-        this.estiloEscrita_en = this.estiloEscrita_en;
-        this.enredo = this.enredo;
-        this.enredo_en = this.enredo_en;
-        this.verossimilhanca = this.verossimilhanca;
-        this.verossimilhanca_en = this.verossimilhanca_en;
-        this.personagens = this.personagens;
-        this.caracteristicasLiterarias = this.caracteristicasLiterarias;
-        this.caracteristicasLiterarias_en = this.caracteristicasLiterarias_en;
-        this.conclusao = this.conclusao;
-        this.conclusao_en = this.conclusao_en;
+        this.titulo = titulo;
+        this.titulo_en = titulo_en;
+        this.capa = capa;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+        this.genero = genero;
+        this.genero_en = genero_en;
+        this.resumo = resumo;
+        this.resumo_en = resumo_en;
+        this.contexto = contexto;
+        this.contexto_en = contexto_en;
+        this.estiloEscrita = estiloEscrita;
+        this.estiloEscrita_en = estiloEscrita_en;
+        this.enredo = enredo;
+        this.enredo_en = enredo_en;
+        this.verossimilhanca = verossimilhanca;
+        this.verossimilhanca_en = verossimilhanca_en;
+        this.personagens = personagens;
+        this.caracteristicasLiterarias = caracteristicasLiterarias;
+        this.caracteristicasLiterarias_en = caracteristicasLiterarias_en;
+        this.conclusao = conclusao;
+        this.conclusao_en = conclusao_en;
     }
 
     async criar() {
@@ -80,7 +80,7 @@ export default class DicaModel {
         });
     }
 
-    async atualizar() {
+     static async atualizar() {
         return prisma.livro.update({
             where: { id: this.id },
             data: {
