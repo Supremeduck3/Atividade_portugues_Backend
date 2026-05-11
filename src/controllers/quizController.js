@@ -6,7 +6,7 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const { conteudoQuestao, conteudoQuestao_en, RespostaQuestao, RespostaQuestao_en } =
+        const { conteudoQuestao, conteudoQuestao_en, respostaQuestao, respostaQuestao_en } =
             req.body;
 
         if (!conteudoQuestao) {
@@ -15,18 +15,18 @@ export const criar = async (req, res) => {
         if (!conteudoQuestao_en) {
             return res.status(400).json({ error: 'O campo "conteudoQuestao_en" é obrigatório!' });
         }
-        if (RespostaQuestao === undefined || RespostaQuestao === null) {
+        if (respostaQuestao === undefined || respostaQuestao === null) {
             return res.status(400).json({ error: 'O campo "RespostaQuestao" é obrigatório!' });
         }
-        if (RespostaQuestao_en === undefined || RespostaQuestao_en === null) {
+        if (respostaQuestao_en === undefined || respostaQuestao_en === null) {
             return res.status(400).json({ error: 'O campo "RespostaoQuestao_en" é obrigatório!' });
         }
 
         const Quiz = new QuizModel({
             conteudoQuestao,
             conteudoQuestao_en,
-            RespostaQuestao,
-            RespostaQuestao_en,
+            respostaQuestao,
+            respostaQuestao_en,
         });
         const data = await Quiz.criar();
 

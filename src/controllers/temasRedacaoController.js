@@ -1,4 +1,4 @@
-import TemasRedacaoModel from '../models/TemasRedacaoModel.js';
+import TemasRedacaoModel from '../models/temasRedacaoModel.js'
 
 export const criar = async (req, res) => {
     try {
@@ -50,21 +50,18 @@ export const buscarTodos = async (req, res) => {
 export const buscarPorId = async (req, res) => {
     try {
         const { id } = req.params;
+        if (isNaN(id)) return res.status(400).json({ error: 'ID inválido.' });
 
-        if (isNaN(id)) {
-            return res.status(400).json({ error: 'O ID enviado não é um número válido.' });
-        }
+        const registro = await TemasRedacaoModel.buscarPorId(parseInt(id));
 
-        const TemasRedacao = await TemasRedacaoModel.buscarPorId(parseInt(id));
-
-        if (!TemasRedacao) {
+        if (!registro) {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
-        return res.status(200).json({ data: TemasRedacao });
+        return res.status(200).json({ data: registro });
     } catch (error) {
         console.error('Erro ao buscar:', error);
-        return res.status(500).json({ error: 'Erro ao buscar registro.' });
+        return res.status(500).json({ error: 'Erro interno.' });
     }
 };
 

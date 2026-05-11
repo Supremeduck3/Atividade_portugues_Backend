@@ -3,10 +3,10 @@ import prisma from '../lib/services/prismaClient.js';
 export default class QuizModel {
     constructor({
         id = null,
-        conteudoQuestao,
-        conteudoQuestao_en,
-        respostaQuestao,
-        respostaQuestao_en,
+        conteudoQuestao = null,
+        conteudoQuestao_en = null,
+        respostaQuestao = null,
+        respostaQuestao_en = null,
 
     } = {}) {
         this.id = id;
