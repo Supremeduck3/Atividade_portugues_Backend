@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+
 import quizRoutes from './routes/quizRoute.js';
 import dicaRoutes from './routes/dicaRoute.js';
 import temasRedacaoRoutes from './routes/temasRedacaoRoute.js';
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 });
 
 // Rotas
+
 app.use('/api/curiosidades', curiosidadesRoute);
 app.use('/api/dica', dicaRoutes);
 app.use('/api/livro', livroRoutes);
