@@ -73,3 +73,8 @@ model usuario {
   ativo Boolean  @default(true)
   data  DateTime @default(now())
 }
+
+model personagens{
+    id Int @id @default(autoincrement())
+    detalhes String
+}

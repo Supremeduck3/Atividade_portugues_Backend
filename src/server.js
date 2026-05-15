@@ -2,6 +2,7 @@ import express from 'express';
 import 'dotenv/config';
 import { apiKey } from './lib/middleware/apiKey.js';
 
+import arquivoRoutes from './routes/arquivosRoutes.js';
 import quizRoutes from './routes/quizRoute.js';
 import dicaRoutes from './routes/dicaRoute.js';
 import temasRedacaoRoutes from './routes/temasRedacaoRoute.js';
@@ -27,6 +28,9 @@ app.use('/api/livro',apiKey, livroRoutes);
 app.use('/api/quiz',apiKey, quizRoutes);
 app.use('/api/temasRedacao',apiKey, temasRedacaoRoutes);
 app.use('/api/usuario',apiKey, usuarioRoutes);
+
+
+app.use('/api/fotos', apiKey, arquivoRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
