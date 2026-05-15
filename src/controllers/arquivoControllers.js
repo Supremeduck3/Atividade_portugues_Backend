@@ -30,7 +30,7 @@ const buscarArquivo = (tipo) => async (req, res) => {
 
         const livro = await livroModel.buscarPorId(parseInt(id));
         if (!livro) return res.status(404).json({ error: 'Registro não encontrado.' });
-        if (!livro[tipo]) return res.status(404).json({ error: `Nenhum ${tipo} cadastrado.` });
+        if (!livro[tipo]) return res.status(404).json({ error: `Nenhuma ${tipo} cadastrado.` });
 
         return res.status(200).json({ url: livro[tipo] });
     } catch (error) {
@@ -45,7 +45,7 @@ const deletarArquivo = (tipo) => async (req, res) => {
 
         const livro = await livroModel.buscarPorId(parseInt(id));
         if (!livro) return res.status(404).json({ error: 'Registro não encontrado.' });
-        if (!livro[tipo]) return res.status(404).json({ error: `Nenhum ${tipo} para remover.` });
+        if (!livro[tipo]) return res.status(404).json({ error: `Nenhuma ${tipo} para remover.` });
 
         await deletarStorage(livro[tipo]);
         livro[tipo] = null;

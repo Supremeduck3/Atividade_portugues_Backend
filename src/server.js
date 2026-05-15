@@ -30,7 +30,7 @@ app.use('/api/temasRedacao',apiKey, temasRedacaoRoutes);
 app.use('/api/usuario',apiKey, usuarioRoutes);
 
 
-app.use('/api/fotos', apiKey, arquivoRoutes);
+app.use('/api/upload', apiKey, arquivoRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
