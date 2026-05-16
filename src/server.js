@@ -1,6 +1,7 @@
 import express from 'express';
 import 'dotenv/config';
 import { apiKey } from './lib/middleware/apiKey.js';
+import cors from 'cors'
 
 import arquivoRoutes from './routes/arquivosRoutes.js';
 import quizRoutes from './routes/quizRoute.js';
@@ -13,6 +14,8 @@ import livroRoutes from './routes/livroRoute.js'
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
+app.use(cors())
 app.use(express.json());
 
 app.get('/', (req, res) => {

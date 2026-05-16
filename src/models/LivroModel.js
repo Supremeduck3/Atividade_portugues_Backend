@@ -5,24 +5,24 @@ export default class LivroModel {
         id = null,
         titulo,
         titulo_en,
-        capa,
+        capa = null,
         autor,
-        anoPublicacao,
-        genero,
-        genero_en,
+        anoPublicacao = null,
+        genero = null,
+        genero_en = null,
         resumo,
         resumo_en,
-        contexto,
-        contexto_en,
-        estiloEscrita,
-        estiloEscrita_en,
+        contexto = null,
+        contexto_en = null,
+        estiloEscrita = null,
+        estiloEscrita_en = null,
         enredo,
         enredo_en,
         verossimilhanca,
         verossimilhanca_en,
         personagens,
-        caracteristicasLiterarias,
-        caracteristicasLiterarias_en,
+        caracteristicasLiterarias = null,
+        caracteristicasLiterarias_en = null,
         conclusao,
         conclusao_en,
     } = {}) {
@@ -80,7 +80,7 @@ export default class LivroModel {
         });
     }
 
-     static async atualizar() {
+    async atualizar() {
         return prisma.livro.update({
             where: { id: this.id },
             data: {

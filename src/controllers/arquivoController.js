@@ -57,6 +57,6 @@ const deletarArquivo = (tipo) => async (req, res) => {
     }
 };
 
-export const uploadFoto = uploadArquivo('foto');
-export const buscarFoto = buscarArquivo('foto');
-export const deletarFoto = deletarArquivo('foto');
+export const uploadFoto = uploadArquivo('capa');
+export const buscarFoto = buscarArquivo('capa');
+export const deletarFoto = deletarArquivo('capa');
