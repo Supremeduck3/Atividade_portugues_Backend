@@ -77,4 +77,5 @@ model usuario {
 model personagens{
     id Int @id @default(autoincrement())
     detalhes String
+    foto String?
 }

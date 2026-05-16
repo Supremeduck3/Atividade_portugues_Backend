@@ -198,58 +198,58 @@ export const atualizar = async (req, res) => {
             Livro.autor = req.body.autor;
         }
         if (req.body.anoPublicacao !== undefined) {
-            Livro.anoPublicacao = parseFloat(req.body.anoPublicacao);
+            Livro.anoPublicacao = req.body.anoPublicacao;
         }
         if (req.body.genero !== undefined) {
-            Livro.genero = parseFloat(req.body.genero);
+            Livro.genero = req.body.genero;
         }
         if (req.body.genero_en !== undefined) {
-            Livro.genero_en = parseFloat(req.body.genero_en);
+            Livro.genero_en = req.body.genero_en;
         }
         if (req.body.resumo !== undefined) {
-            Livro.resumo = parseFloat(req.body.resumo);
+            Livro.resumo = req.body.resumo;
         }
         if (req.body.resumo_en !== undefined) {
-            Livro.resumo_en = parseFloat(req.body.resumo_en);
+            Livro.resumo_en = req.body.resumo_en;
         }
         if (req.body.contexto !== undefined) {
-            Livro.contexto = parseFloat(req.body.contexto);
+            Livro.contexto = req.body.contexto;
         }
         if (req.body.contexto_en !== undefined) {
-            Livro.contexto_en = parseFloat(req.body.contexto_en);
+            Livro.contexto_en = req.body.contexto_en;
         }
         if (req.body.estiloEscrita !== undefined) {
-            Livro.estiloEscrita = parseFloat(req.body.estiloEscrita);
+            Livro.estiloEscrita = req.body.estiloEscrita;
         }
         if (req.body.estiloEscrita_en !== undefined) {
-            Livro.estiloEscrita_en = parseFloat(req.body.estiloEscrita_en);
+            Livro.estiloEscrita_en = req.body.estiloEscrita_en;
         }
         if (req.body.enredo !== undefined) {
-            Livro.enredo = parseFloat(req.body.enredo);
+            Livro.enredo = req.body.enredo;
         }
         if (req.body.enredo_en !== undefined) {
-            Livro.enredo_en = parseFloat(req.body.enredo_en);
+            Livro.enredo_en = req.body.enredo_en;
         }
         if (req.body.verossimilhanca !== undefined) {
-            Livro.verossimilhanca = parseFloat(req.body.verossimilhanca);
+            Livro.verossimilhanca = req.body.verossimilhanca;
         }
         if (req.body.verossimilhanca_en !== undefined) {
-            Livro.verossimilhanca_en = parseFloat(req.body.verossimilhanca_en);
+            Livro.verossimilhanca_en = req.body.verossimilhanca_en;
         }
         if (req.body.personagens !== undefined) {
-            Livro.personagens = parseFloat(req.body.personagens);
+            Livro.personagens = req.body.personagens;
         }
         if (req.body.caracteristicasLiterarias !== undefined) {
-            Livro.caracteristicasLiterarias = parseFloat(req.body.caracteristicasLiterarias);
+            Livro.caracteristicasLiterarias = req.body.caracteristicasLiterarias;
         }
         if (req.body.caracteristicasLiterarias_en !== undefined) {
-            Livro.caracteristicasLiterarias_en = parseFloat(req.body.caracteristicasLiterarias_en);
+            Livro.caracteristicasLiterarias_en = req.body.caracteristicasLiterarias_en;
         }
         if (req.body.conclusao !== undefined) {
-            Livro.conclusao = parseFloat(req.body.conclusao);
+            Livro.conclusao = req.body.conclusao;
         }
         if (req.body.conclusao_en !== undefined) {
-            Livro.conclusao_en = parseFloat(req.body.conclusao_en);
+            Livro.conclusao_en = req.body.conclusao_en;
         }
 
         const data = await Livro.atualizar();
