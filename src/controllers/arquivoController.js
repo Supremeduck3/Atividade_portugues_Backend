@@ -1,4 +1,5 @@
 import livroModel from '../models/LivroModel.js';
+import ImagemModel from '../models/imagensModel.js';
 import {
     upload as uploadStorage,
     deletar as deletarStorage,
@@ -57,6 +58,10 @@ const deletarArquivo = (model, tipo) => async (req, res) => {
     }
 };
 
-export const uploadFoto = uploadArquivo(livroModel, 'capa');
-export const buscarFoto = buscarArquivo('capa');
-export const deletarFoto = deletarArquivo('capa');
+export const uploadCapa = uploadArquivo(livroModel, 'capa');
+export const buscarCapa = buscarArquivo(livroModel, 'capa');
+export const deletarCapa = deletarArquivo(livroModel, 'capa');
+
+export const uploadImagem = uploadArquivo(ImagemModel, 'foto');
+export const buscarImagem = buscarArquivo(ImagemModel, 'foto');
+export const deletarImagem = deletarArquivo(ImagemModel, 'foto');
