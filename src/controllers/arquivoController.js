@@ -1,5 +1,5 @@
 import livroModel from '../models/LivroModel.js';
-import ImagemModel from '../models/imagensModel.js';
+import ImagemModel from '../models/ImagensModel.js';
 import {
     upload as uploadStorage,
     deletar as deletarStorage,
