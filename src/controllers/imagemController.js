@@ -7,20 +7,20 @@ export const criar = async (req, res) => {
         }
 
         const {
-            imagem,
+            foto,
             descricao
         } = req.body;
 
-        if (!imagem){
-            return res.status(400).json({ error: 'O campo "imagem" é obrigatório!' });
+        if (!foto){
+            return res.status(400).json({ error: 'O campo "foto" é obrigatório!' });
         }
         if (!descricao){
             return res.status(400).json({ error: 'O campo "descricao" é obrigatório!' });
         }
 
-        const Imagem = new ImagemModel({ descricao, imagem });
+        const imagem = new ImagemModel({ descricao, foto });
 
-        const data = await Imagem.criar();
+        const data = await imagem.criar();
 
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });
     } catch (error) {
@@ -52,13 +52,13 @@ export const buscarPorId = async (req, res) => {
             return res.status(400).json({ error: 'O ID enviado não é um número válido.' });
         }
 
-        const Imagem = await ImagemModel.buscarPorId(parseInt(id));
+        const foto = await ImagemModel.buscarPorId(parseInt(id));
 
-        if (!Imagem) {
+        if (!foto) {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
-        return res.status(200).json({ data: Imagem });
+        return res.status(200).json({ data: foto });
     } catch (error) {
         console.error('Erro ao buscar:', error);
         return res.status(500).json({ error: 'Erro ao buscar registro.' });
@@ -77,21 +77,21 @@ export const atualizar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const Imagem = await ImagemModel.buscarPorId(parseInt(id));
+        const foto = await ImagemModel.buscarPorId(parseInt(id));
 
-        if (!Imagem) {
+        if (!foto) {
             return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
         }
 
         if (req.body.descricao !== undefined) {
-            Imagem.descricao = req.body.descricao;
+            foto.descricao = req.body.descricao;
         }
-        if (req.body.imagem !== undefined) {
-            Imagem.imagem = req.body.imagem;
+        if (req.body.foto !== undefined) {
+            foto.foto = req.body.foto;
         }
 
 
-        const data = await Imagem.atualizar();
+        const data = await foto.atualizar();
 
         return res.status(200).json({ message: `O registro foi atualizado com sucesso!`});
     } catch (error) {
@@ -108,13 +108,13 @@ export const deletar = async (req, res) => {
             return res.status(400).json({ error: 'ID inválido.' });
         }
 
-        const Imagem = await ImagemModel.buscarPorId(parseInt(id));
+        const foto = await ImagemModel.buscarPorId(parseInt(id));
 
-        if (!Imagem) {
+        if (!foto) {
             return res.status(404).json({ error: 'Registro não encontrado para deletar.' });
         }
 
-        await Imagem.deletar();
+        await foto.deletar();
 
         return res.status(200).json({ message: `O registro foi deletado com sucesso!`});
     } catch (error) {

@@ -9,7 +9,7 @@ router.post('/:id/capa', upload.single('capa'), controller.uploadCapa);
 router.get('/:id/capa', controller.buscarCapa);
 router.delete('/:id/capa', controller.deletarCapa);
 
-router.post('/:id/Imagem', upload.single('capa'), controller.uploadImagem);
+router.post('/:id/Imagem', upload.single('imagem'), controller.uploadImagem);
 router.get('/:id/Imagem', controller.buscarImagem);
 router.delete('/:id/Imagem', controller.deletarImagem);
 

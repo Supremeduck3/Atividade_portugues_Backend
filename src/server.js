@@ -31,7 +31,7 @@ app.use('/api/livro',apiKey, livroRoutes);
 app.use('/api/quiz',apiKey, quizRoutes);
 app.use('/api/temasRedacao',apiKey, temasRedacaoRoutes);
 app.use('/api/usuario',apiKey, usuarioRoutes);
-
+app.use('api/imagem', apiKey, arquivoRoutes)
 
 app.use('/api/upload', apiKey, arquivoRoutes);
 
