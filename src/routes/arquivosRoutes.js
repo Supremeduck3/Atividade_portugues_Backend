@@ -14,9 +14,10 @@ router.post('/:id/Imagem', upload.single('imagem'), controller.uploadImagem);
 router.get('/:id/Imagem', controller.buscarImagem);
 router.delete('/:id/Imagem', controller.deletarImagem);
 
-router.post('/', imagemController.criar);
-router.get('/', imagemController.buscarTodos);
-router.get('/:id', imagemController.buscarPorId);
-router.put('/:id', imagemController.atualizar);
-router.delete('/:id', imagemController.deletar);
+router.post('/adicionar', imagemController.criar);
+router.get('/adicionar', imagemController.buscarTodos);
+router.get('/adicionar/:id', imagemController.buscarPorId);
+router.put('/adicionar/:id', imagemController.atualizar);
+router.delete('/adicionar/:id', imagemController.deletar);
+
 export default router;
