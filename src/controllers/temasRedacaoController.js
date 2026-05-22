@@ -118,7 +118,7 @@ export const deletar = async (req, res) => {
 
         await TemasRedacao.deletar();
 
-        return res.status(200).json({ message: `O registro ${TemasRedacao.assunto || assunto_en}" foi deletado com sucesso!, deletado: Dica `});
+        return res.status(200).json({ message: `O registro ${TemasRedacao.assunto || assunto_en}" foi deletado com sucesso!, deletado: Temas redação `});
     } catch (error) {
         console.error('Erro ao deletar:', error);
         return res.status(500).json({ error: 'Erro ao deletar registro.' });
