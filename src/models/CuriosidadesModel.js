@@ -12,12 +12,12 @@ export default class CuriosidadesModel {
 
     } = {}) {
         this.id = id;
-        this.fatosLivro = this.fatosLivro;
-        this.fatosLivro_en = this.fatosLivro_en;
-        this.autor = this.autor;
-        this.autor = this.autor;
-        this.contexto = this.contexto;
-        this.contexto_en = this.contexto_en;
+        this.fatosLivro = fatosLivro;
+        this.fatosLivro_en = fatosLivro_en;
+        this.autor = autor;
+        this.autor_en = autor_en;
+        this.contexto = contexto;
+        this.contexto_en = contexto_en;
     }
 
     async criar() {
