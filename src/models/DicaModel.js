@@ -5,7 +5,7 @@ export default class DicaModel {
         id = null,
         conteudo,
         conteudo_en,
-        interpretacao = true,
+        interpretacao,
         interpretacao_en,
         temasVestibular,
         temasVestibular_en = null,
@@ -69,16 +69,16 @@ export default class DicaModel {
             where.conteudo_en = { contains: filtros.conteudo_en, mode: 'insensitive' };
         }
         if (filtros.interpretacao !== undefined) {
-            where.interpretacao = filtros.interpretacao === 'true';
+            where.interpretacao = filtros.interpretacao;
         }
         if (filtros.interpretacao_en !== undefined) {
-            where.interpretacao_en = filtros.interpretacao_en === 'true';
+            where.interpretacao_en = filtros.interpretacao_en;
         }
         if (filtros.temasVestibular !== undefined) {
-            where.temasVestibular = parseFloat(filtros.temasVestibular);
+            where.temasVestibular = filtros.temasVestibular;
         }
         if (filtros.temasVestibular_en !== undefined) {
-            where.temasVestibular_en = parseFloat(filtros.temasVestibular_en);
+            where.temasVestibular_en = filtros.temasVestibular_en;
         }
 
         return prisma.dica.findMany({ where });

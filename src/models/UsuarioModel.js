@@ -27,7 +27,7 @@ export default class UsuarioModel {
     async deletar() {
         return prisma.usuario.delete({
             where: {
-                id: Number(this.id), // Força a conversão para número aqui também
+                id: Number(this.id),
             },
         });
     }

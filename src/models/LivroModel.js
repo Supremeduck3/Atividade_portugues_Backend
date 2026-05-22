@@ -124,64 +124,64 @@ export default class LivroModel {
             where.titulo_en = { contains: filtros.titulo_en, mode: 'insensitive' };
         }
         if (filtros.capa !== undefined) {
-            where.capa = filtros.capa === 'true';
+            where.capa = filtros.capa;
         }
         if (filtros.autor !== undefined) {
-            where.autor = filtros.autor === 'true';
+            where.autor = filtros.autor;
         }
         if (filtros.anoPublicacao !== undefined) {
-            where.anoPublicacao = parseFloat(filtros.anoPublicacao);
+            where.anoPublicacao = filtros.anoPublicacao;
         }
         if (filtros.genero !== undefined) {
-            where.genero = parseFloat(filtros.genero);
+            where.genero = filtros.genero;
         }
         if (filtros.genero_en !== undefined) {
-            where.genero_en = parseFloat(filtros.genero_en);
+            where.genero_en = filtros.genero_en;
         }
         if (filtros.resumo !== undefined) {
-            where.resumo = parseFloat(filtros.resumo);
+            where.resumo = filtros.resumo;
         }
         if (filtros.resumo_en !== undefined) {
-            where.resumo_en = parseFloat(filtros.resumo_en);
+            where.resumo_en = filtros.resumo_en;
         }
         if (filtros.contexto !== undefined) {
-            where.contexto = parseFloat(filtros.contexto);
+            where.contexto = filtros.contexto;
         }
         if (filtros.contexto_en !== undefined) {
-            where.contexto_en = parseFloat(filtros.contexto_en);
+            where.contexto_en = filtros.contexto_en;
         }
         if (filtros.estiloEscrita !== undefined) {
-            where.estiloEscrita = parseFloat(filtros.estiloEscrita);
+            where.estiloEscrita = filtros.estiloEscrita;
         }
         if (filtros.estiloEscrita_en !== undefined) {
-            where.estiloEscrita_en = parseFloat(filtros.estiloEscrita_en);
+            where.estiloEscrita_en = filtros.estiloEscrita_en;
         }
         if (filtros.enredo !== undefined) {
-            where.enredo = parseFloat(filtros.enredo);
+            where.enredo = filtros.enredo;
         }
         if (filtros.enredo_en !== undefined) {
-            where.enredo_en = parseFloat(filtros.enredo_en);
+            where.enredo_en = filtros.enredo_en;
         }
         if (filtros.verossimilhanca !== undefined) {
-            where.verossimilhanca = parseFloat(filtros.verossimilhanca);
+            where.verossimilhanca = filtros.verossimilhanca;
         }
         if (filtros.verossimilhanca_en !== undefined) {
-            where.verossimilhanca_en = parseFloat(filtros.verossimilhanca_en);
+            where.verossimilhanca_en = filtros.verossimilhanca_en;
         }
         if (filtros.personagens !== undefined) {
-            where.personagens = parseFloat(filtros.personagens);
+            where.personagens = filtros.personagens;
         }
         if (filtros.conclusao !== undefined) {
-            where.conclusao = parseFloat(filtros.conclusao);
+            where.conclusao = filtros.conclusao;
         }
         if (filtros.conclusao_en !== undefined) {
-            where.conclusao_en = parseFloat(filtros.conclusao_en);
+            where.conclusao_en = filtros.conclusao_en;
         }
         if (filtros.caracteristicasLiterarias !== undefined) {
-            where.caracteristicasLiterarias = parseFloat(filtros.caracteristicasLiterarias);
+            where.caracteristicasLiterarias = filtros.caracteristicasLiterarias;
         }
         if (filtros.caracteristicasLiterarias_en !== undefined) {
-            where.caracteristicasLiterarias_en = parseFloat(filtros.caracteristicasLiterarias_en);
+            where.caracteristicasLiterarias_en = filtros.caracteristicasLiterarias_en;
         }
 
         return prisma.livro.findMany({ where });
