@@ -44,7 +44,7 @@ export default class TemasRedacaoModel {
             where.assunto_en = { contains: filtros.assunto_en, mode: 'insensitive' };
         }
         if (filtros.dificuldade !== undefined) {
-            where.dificuldade = filtros.dificuldade === 'true';
+            where.dificuldade = filtros.dificuldade;
         }
 
         return prisma.temasRedacao.findMany({ where });

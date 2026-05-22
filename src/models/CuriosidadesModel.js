@@ -61,16 +61,16 @@ export default class CuriosidadesModel {
             where.fatosLivro_en = { contains: filtros.fatosLivro_en, mode: 'insensitive' };
         }
         if (filtros.autor !== undefined) {
-            where.autor = filtros.autor === 'true';
+            where.autor = filtros.auto;
         }
         if (filtros.autor_en !== undefined) {
-            where.autor_en = filtros.autor_en === 'true';
+            where.autor_en = filtros.autor_en;
         }
         if (filtros.contexto !== undefined) {
-            where.contexto = parseFloat(filtros.contexto);
+            where.contexto =filtros.contexto;
         }
         if (filtros.contexto_en !== undefined) {
-            where.contexto_en = parseFloat(filtros.contexto_en);
+            where.contexto_en = filtros.contexto_en;
         }
 
         return prisma.curiosidades.findMany({ where });

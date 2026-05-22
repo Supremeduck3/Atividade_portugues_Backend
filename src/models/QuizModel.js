@@ -53,10 +53,10 @@ export default class QuizModel {
             where.conteudoQuestao_en = { contains: filtros.conteudoQuestao_en, mode: 'insensitive' };
         }
         if (filtros.respostaQuestao !== undefined) {
-            where.respostaQuestao = filtros.respostaQuestao === 'true';
+            where.respostaQuestao = filtros.respostaQuestao;
         }
         if (filtros.respostaQuestao_en !== undefined) {
-            where.respostaQuestao_en = filtros.respostaQuestao_en === 'true';
+            where.respostaQuestao_en = filtros.respostaQuestao_en;
         }
 
         return prisma.quiz.findMany({ where });
