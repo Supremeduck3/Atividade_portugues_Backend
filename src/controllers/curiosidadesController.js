@@ -112,10 +112,10 @@ export const atualizar = async (req, res) => {
             Curiosidades.autor_en = req.body.autor_en;
         }
         if (req.body.contexto !== undefined) {
-            Curiosidades.contexto = parseFloat(req.body.contexto);
+            Curiosidades.contexto = req.body.contexto;
         }
         if (req.body.contexto_en !== undefined) {
-            Curiosidades.contexto_en = parseFloat(req.body.contexto_en);
+            Curiosidades.contexto_en = req.body.contexto_en;
         }
 
         const data = await CuriosidadesModel.atualizar();
