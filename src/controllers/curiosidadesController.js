@@ -118,7 +118,7 @@ export const atualizar = async (req, res) => {
             Curiosidades.contexto_en = req.body.contexto_en;
         }
 
-        const data = await CuriosidadesModel.atualizar();
+        const data = await Curiosidades.atualizar();
 
         return res.status(200).json({ message: `O registro "${data.fatosLivro || fatosLivro_en || autor || autor_en || contexto || contexto_en} " foi atualizado com sucesso!, data `});
     } catch (error) {

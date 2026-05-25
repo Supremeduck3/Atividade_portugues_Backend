@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 // Rotas
 
-app.use('/api/curiosidades',apiKey, curiosidadesRoute);
+app.use('/api/curiosidades', curiosidadesRoute);
 app.use('/api/dica',apiKey, dicaRoutes);
 app.use('/api/livro',apiKey, livroRoutes);
 app.use('/api/quiz',apiKey, quizRoutes);
