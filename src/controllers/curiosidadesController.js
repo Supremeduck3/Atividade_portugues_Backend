@@ -93,7 +93,7 @@ export const atualizar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const Curiosidades = await DicaModel.buscarPorId(parseInt(id));
+        const Curiosidades = await CuriosidadesModel.buscarPorId(parseInt(id));
 
         if (!Curiosidades) {
             return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
@@ -118,7 +118,7 @@ export const atualizar = async (req, res) => {
             Curiosidades.contexto_en = parseFloat(req.body.contexto_en);
         }
 
-        const data = await Curiosidades.atualizar();
+        const data = await CuriosidadesModel.atualizar();
 
         return res.status(200).json({ message: `O registro "${data.fatosLivro || fatosLivro_en || autor || autor_en || contexto || contexto_en} " foi atualizado com sucesso!, data `});
     } catch (error) {
@@ -135,7 +135,7 @@ export const deletar = async (req, res) => {
             return res.status(400).json({ error: 'ID inválido.' });
         }
 
-        const Curiosidades = await DicaModel.buscarPorId(parseInt(id));
+        const Curiosidades = await CuriosidadesModel.buscarPorId(parseInt(id));
 
         if (!Curiosidades) {
             return res.status(404).json({ error: 'Registro não encontrado para deletar.' });

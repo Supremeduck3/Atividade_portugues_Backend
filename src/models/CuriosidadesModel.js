@@ -81,6 +81,6 @@ export default class CuriosidadesModel {
         if (!data) {
             return null;
         }
-        return new curiosidadesModel(data);
+        return new CuriosidadesModel(data);
     }
 }
