@@ -84,5 +84,6 @@ model Personagem {
     created_at DateTime @default(now())
     descricao  String
     personagem String
-    @@map("personagem)
+
+    @@map("personagem")
 }
