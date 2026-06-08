@@ -24,7 +24,7 @@ export default class PersonagemModel {
 
     async atualizar() {
         return prisma.personagem.update({
-            where: { id: BigInt(this.id) },
+            where: { id: this.id },
             data: {
                 descricao: this.descricao,
                 personagem: this.personagem,
@@ -33,7 +33,7 @@ export default class PersonagemModel {
     }
 
     async deletar() {
-        return prisma.personagem.delete({ where: { id: BigInt(this.id) } });
+        return prisma.personagem.delete({ where: { id: this.id } });
     }
 
     static async buscarTodos(filtros = {}) {
@@ -50,7 +50,7 @@ export default class PersonagemModel {
     }
 
     static async buscarPorId(id) {
-        const data = await prisma.personagem.findUnique({ where: { id: BigInt(id) } });
+        const data = await prisma.personagem.findUnique({ where: { id: parseInt(id) } });
         if (!data) {
             return null;
         }
