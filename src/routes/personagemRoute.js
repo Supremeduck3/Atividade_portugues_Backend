@@ -3,10 +3,10 @@ import * as personagem from '../controllers/personagemController.js';
 
 const router = express.Router();
 
-router.post('/', personagem.criar);
-router.get('/', personagem.buscarTodos);
-router.get('/:id', personagem.buscarPorId);
-router.put('/:id', personagem.atualizar);
-router.delete('/:id', personagem.deletar);
+router.post('a/', personagem.criar);
+router.get('a/', personagem.buscarTodos);
+router.get('a/:id', personagem.buscarPorId);
+router.put('a/:id', personagem.atualizar);
+router.delete('a/:id', personagem.deletar);
 
 export default router;
