@@ -10,7 +10,7 @@ import temasRedacaoRoutes from './routes/temasRedacaoRoute.js';
 import curiosidadesRoute from './routes/curiosidadesRoute.js'
 import usuarioRoutes from './routes/usuarioRoute.js';
 import livroRoutes from './routes/livroRoute.js'
-
+import personagemRoutes from './routes/personagemRoute.js'
 const app = express();
 const PORT = process.env.PORT || 3001;
 
