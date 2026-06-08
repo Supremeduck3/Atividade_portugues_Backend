@@ -32,6 +32,7 @@ app.use('/api/quiz',apiKey, quizRoutes);
 app.use('/api/temasRedacao',apiKey, temasRedacaoRoutes);
 app.use('/api/usuario',apiKey, usuarioRoutes);
 app.use('/api/upload', apiKey, arquivoRoutes);
+app.use('/api/personagem', apiKey, personagemRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
