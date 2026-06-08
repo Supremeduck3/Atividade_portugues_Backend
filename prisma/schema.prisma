@@ -79,3 +79,9 @@ model Imagens{
     foto String
     descricao String?
 }
+model Personagem {
+    id         Int      @id @default(autoincrement())
+    created_at DateTime @default(now())
+    descricao  String
+    personagem String
+}
